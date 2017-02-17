@@ -2,6 +2,8 @@
 var gulp = require('gulp'),
     less = require('gulp-less'),
     minifycss = require('gulp-minify-css'),
+    imagemin = require('gulp-imagemin'),
+    // cache = require('gulp-cache'),
     jshint = require('gulp-jshint'), //代码验证检查
     uglify = require('gulp-uglify'), //压缩js代码
     rename = require('gulp-rename'), //文件重命名
@@ -32,6 +34,17 @@ gulp.task('html', function () {
         //     message: '生成html'
         // }));
 });
+
+// 图片处理任务
+gulp.task('images', function() {  
+  return gulp.src('src/img/*')
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))      //压缩图片
+    // 如果想对变动过的文件进行压缩，则使用下面一句代码
+    // .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))) 
+    .pipe(gulp.dest('dist/img'))
+    // .pipe(notify({ message: '图片处理完成' }));
+});
+
 //js代码校验、合并和压缩（类似jquery的链式操作，牛）
 gulp.task('scripts', function() {
     return gulp.src('src/**/*.js') //源文件
@@ -55,7 +68,10 @@ gulp.task('watch', function() {
     gulp.watch('src/**/*.js', ['scripts']);
     // 监听 .less文件改动，一旦改动就会自动压缩合并
     gulp.watch('src/less/**/*.less', ['less']);
+    // 监听所有html文件
     gulp.watch('src/**/*.html', ['html']);
+    // 监听所有图片档
+    gulp.watch('public/html/img/*', ['images']);
     // Create LiveReload server（用来自动刷新浏览器）
     livereload.listen();
     // Watch any files in dist/, reload on change
@@ -63,4 +79,4 @@ gulp.task('watch', function() {
 });
 
 // 默认任务，这里完全可以是多个任务，比如压缩CSS，压缩图片，压缩js等
-gulp.task('default', ['scripts', 'less', 'html', 'watch']);
+gulp.task('default', ['scripts', 'less', 'html','images', 'watch']);
