@@ -4,7 +4,8 @@
   "description": "nana deep development website",
   "main": "index.js",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "jshint": "^2.9.4"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

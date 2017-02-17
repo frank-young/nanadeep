@@ -13,38 +13,54 @@ var gulp = require('gulp'),
 gulp.task('less', function () {
     gulp.src('src/less/**/*.less')
         .pipe(less())
+        .pipe(concat('style.css'))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(minifycss())
-        .pipe(gulp.dest('src/css'));
+        .pipe(gulp.dest('dist/css'))
+        // .pipe(notify({
+        //     message: 'css压缩成功！'
+        // }));
+});
+// 生成html
+gulp.task('html', function () {
+    gulp.src('src/**/*.html')
+        .pipe(gulp.dest('dist'))
+        // .pipe(notify({
+        //     message: '生成html'
+        // }));
 });
 //js代码校验、合并和压缩（类似jquery的链式操作，牛）
 gulp.task('scripts', function() {
     return gulp.src('src/**/*.js') //源文件
-        .pipe(jshint('.jshintrc')) //1、校验JS文件，jshint校验规则
-        .pipe(jshint.reporter('default'))
-        .pipe(concat('goodgis.js')) //2、合并js文件，goodgis.js为合并的文件名称
-        .pipe(gulp.dest('dist')) //合并后文件存放位置
+        // .pipe(jshint('.jshintrc')) //1、校验JS文件，jshint校验规则
+        // .pipe(jshint.reporter('default'))
+        .pipe(concat('common.js')) //2、合并js文件，goodgis.js为合并的文件名称
+        .pipe(gulp.dest('dist/js')) //合并后文件存放位置
         .pipe(rename({
             suffix: '.min'
         }))
         .pipe(uglify()) //3、执行压缩任务
-        .pipe(gulp.dest('dist')) //压缩后文件存放位置
-        .pipe(notify({ //4、操作结束后提示
-            message: 'Scripts task complete'
-        }));
+        .pipe(gulp.dest('dist/js')) //压缩后文件存放位置
+        // .pipe(notify({ //4、操作结束后提示
+        //     message: 'js压缩成功！'
+        // }));
 });
-// 默认任务，这里完全可以是多个任务，比如压缩CSS，压缩图片，压缩js等
-gulp.task('default', ['watch'], function() {
-    gulp.start('scripts');
-    gulp.start('less');
-});
+
 // 监听（前端自动化的情怀）
 gulp.task('watch', function() {
     // 监听 .js文件改动，一旦改动就会自动压缩合并
     gulp.watch('src/**/*.js', ['scripts']);
     // 监听 .less文件改动，一旦改动就会自动压缩合并
-    gulp.watch('src/less/**/*.js', ['less']);
+    gulp.watch('src/less/**/*.less', ['less']);
+    gulp.watch('src/**/*.html', ['html']);
     // Create LiveReload server（用来自动刷新浏览器）
     livereload.listen();
     // Watch any files in dist/, reload on change
     gulp.watch(['dist/**']).on('change', livereload.changed);
 });
+
+// 默认任务，这里完全可以是多个任务，比如压缩CSS，压缩图片，压缩js等
+gulp.task('default', ['scripts', 'less', 'html', 'watch']);
