@@ -65,6 +65,8 @@ textarea {
 
 .split {
 	border-top: 2px solid rgb(61, 76, 109);
+	margin-left: -15px;
+	margin-right: -15px;
 }
 
 /**
@@ -206,6 +208,7 @@ textarea {
 }
 // 价格列表部分
 .price-screen {
+	padding-bottom: 40px;
     h3 {
         text-align: center;
         margin-top: 60px;
@@ -223,6 +226,7 @@ textarea {
 
 // 底部信息
 .footer {
+	margin-top: -42px;
     padding: 10px 0;
     border-top: 1px solid #eee;
     .info {
@@ -231,6 +235,85 @@ textarea {
     }
 }
 
+// 关于我们页面
+.about-screen {
+	min-height: 100vh;
+	padding-top: 80px;
+	padding-bottom: 40px;
+	box-sizing: border-box;
+	.nav-tabs {
+		border-bottom: 0;
+		padding-bottom: 50px;
+		.nav-link {
+			padding: .5rem 0;
+			border: 0;
+			text-align: center;
+			color: #999;
+			font-size: 15px;
+			&.active {
+				color: @primary;
+			}
+		}
+	}
+	.tab-content {
+		h3.title {
+			position: relative;
+			font-size: 22px;
+			color: #666;
+			text-align: center;
+			margin-bottom: 50px;
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: -15px;
+				left: 50%;
+				width: 80px;
+				-webkit-transform: translate(-50%, 0);
+				transform: translate(-50%, 0);
+				border-bottom: 2px solid @primary;
+			}
+		}
+		p.desc {
+			margin-bottom: 100px;
+			text-indent: 2em;
+			color: #999;
+		}
+		h4 {
+	        color: #3c4b6c;
+	        margin-top: 25px;
+	        margin-bottom: 30px;
+	        text-align: center;
+	    }
+	    h5 {
+	    	margin-top: 50px;
+	    	margin-bottom: 20px;
+	    	font-size: 22px;
+	    	color: #666;
+	    }
+		h6 {
+	    	margin-top: 20px;
+	    	margin-bottom: 20px;
+	    	font-size: 16px;
+	    	color: #777;
+	    }
+	    p {
+	        line-height: 1.75em;
+	        color: #999;
+	    }
+	    ol {
+	    	margin: 0;
+	    	padding: 0 0 0 15px;
+	    	li {
+	    		color: #999;
+	    		font-size: 14px;
+	    		margin-bottom: 5px;
+	    	}
+	    }
+	    .intro {
+	    	margin-bottom: 40px;
+	    }
+	}
+}
 
 /**
  * pc部分

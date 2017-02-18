@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>呐呐科技-呐呐深度开发</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="img/logo.png" srcset="img/logo@2x.png 2x" alt=""></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">首页 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="demo.html">案例</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="public_interest.html">公益事业</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">我们</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-block btn-outline-success" data-toggle="modal" data-target="#demand">提交需求</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="modal fade" id="demand" tabindex="-1" role="dialog" aria-labelledby="demandLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form action="">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="demandLabel">提交需求</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>简单提交您的项目需求，我们的产品经理会在1个工作日内开始与您沟通</p>
+                        <div class="row">
+                            <div class="col-sm-12 mb-15">
+                                <input class="form-control" type="text" placeholder="姓名">
+                            </div>
+                            <div class="col-sm-12 mb-15">
+                                <input class="form-control" type="text" placeholder="电话">
+                            </div>
+                            <div class="col-sm-12 mb-15">
+                                <input class="form-control" type="text" placeholder="微信/QQ">
+                            </div>
+                            <div class="col-sm-12 mb-15">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">简单介绍你的项目：</label>
+                                    <textarea class="form-control" name="" id="" placeholder="示例：我想做一款app,ios和Android两个平台，现有产品需求文档，无设计，有参考 app 如网易云音乐，功能与其一样即可。" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="info">&copy; 2017 呐呐（天津）科技有限公司 版权所有</span>
+        </div>
+    </footer>
+    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/clipboard.js/1.6.0/clipboard.min.js"></script>
+</body>
+
+</html>
