@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>呐呐科技-呐呐深度开发</title>
@@ -20,17 +21,11 @@
                     <a class="nav-link" href="index.html">首页 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="demo.html">案例</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="public_interest.html">公益事业</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="about.html">我们</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <button class="btn btn-block btn-outline-success" data-toggle="modal" data-target="#demand">提交需求</button>
-                </li>
+                </li> -->
             </ul>
         </div>
     </nav>
@@ -43,11 +38,10 @@
                 服务范围：微信、网页、APP、Web APP、H5开发
             </div>
             <div class="submit">
-                <button class="btn" data-toggle="modal" data-target="#demand">立即提交需求</button>
+                <button class="btn btn-copy" onclick="copyText()" data-clipboard-text="yangjunalns" data-toggle="tooltip" data-placement="top" title="复制成功,去微信里粘贴并添加开发人员微信！">点击复制微信号</button>
             </div>
         </div>
     </div>
-    
     <div class="container des-screen">
         <h3>服务流程</h3>
         <div class="row mb-60">
@@ -90,7 +84,7 @@
     <hr class="split">
     <div class="container price-screen">
         <h3>报价列表</h3>
-        <p class="text-center">由于产品的需求不同，具体价格需要联系我们，然后我们进行项目技术难度评估，再给出详细报价。</p>
+        <p class="text-center">由于产品的需求不同，具体价格需要联系我们，然后我们进行项目技术难度评估，再给出详细报价。呐呐科技技术团队采用<span class="color-red" class="btn btn-secondary" title="竞标程序员模式" data-container="body" data-toggle="popover" data-placement="top" data-content="在我们做完技术分析，会将项目按模块化分，采用最低的价格去推送给我们的远程团队开发者和全国远程开发者，从他们中挑选出技术最好的开发人员来开发你的项目。确保价格是行业内最低，为你开发便宜高质量的产品。">竞标程序员模式</span>去开发项目，开发报价<span class="color-red">远低于</span>市场价格！</p>
         <div class="row mb-60">
             <div class="col-xs-12 col-md-6 offset-md-3 mb-15">
                 <table class="table table-bordered">
@@ -135,7 +129,7 @@
                         <tr>
                             <th scope="row">7</th>
                             <td>app开发（ios+android）</td>
-                            <td>4万元起</td>
+                            <td>5万元起</td>
                         </tr>
                     </tbody>
                 </table>
@@ -145,7 +139,7 @@
                     <p class="tip">点击下方按钮复制微信号，添加技术人员微信。
                         <br>
                         <span class="color-success f-16">yangjunalns</span></p>
-                    <button class="btn" id="btn-copy" onclick="copyText()" data-clipboard-text="yangjunalns" data-toggle="tooltip" data-placement="top" title="复制成功！">点击复制微信号</button>
+                    <button class="btn btn-copy" onclick="copyText()" data-clipboard-text="yangjunalns" data-toggle="tooltip" data-placement="top" title="复制成功！">点击复制微信号</button>
                 </div>
             </div>
         </div>
@@ -160,14 +154,22 @@
             <div class="col-xs-12 col-md-6">
                 <h4>呐呐基金</h4>
                 <p>
-                    1.用来喂国内公益组织、个人对接国际资源（资金、物资）。<br>
-                    2.用于捐赠给需要的个人、企业、公益组织。
+                    1.用来喂国内公益组织、个人对接国际资源（资金、物资）。
+                    <br> 2.用于捐赠给需要的个人、企业、公益组织。
                 </p>
                 <h5>透明、可监管、科学发展</h5>
                 <p>
-                    我们会用服务费的<span>4%</span>用来建立呐呐基金，以帮助国内NGO、NPO、与个人的形式来完善呐呐科技与其合作伙伴的社会责任。
+                    我们会用服务费的<span  class="color-red">4%</span>用来建立呐呐基金，以帮助国内NGO、NPO、与个人的形式来完善呐呐科技与其合作伙伴的社会责任。
                 </p>
             </div>
+        </div>
+    </div>
+    <hr class="split">
+    <div class="container des-screen">
+        <h3>联系我们</h3>
+        <p class="text-center">我们的技术将和你们进行项目沟通，并为你定制一套完整的项目方案。</p>
+        <div class="submit mb-100">
+            <button class="btn btn-copy" onclick="copyText()" data-clipboard-text="yangjunalns" data-toggle="tooltip" data-placement="top" title="复制成功,去微信里粘贴并添加开发人员微信！">点击复制微信号</button>
         </div>
     </div>
     <footer class="footer">
