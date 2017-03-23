@@ -36,11 +36,11 @@ gulp.task('html', function () {
 });
 
 // 图片处理任务
-gulp.task('images', function() {  
+gulp.task('images', function() {
   return gulp.src('src/img/*')
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))      //压缩图片
     // 如果想对变动过的文件进行压缩，则使用下面一句代码
-    // .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))) 
+    // .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('dist/img'))
     // .pipe(notify({ message: '图片处理完成' }));
 });
